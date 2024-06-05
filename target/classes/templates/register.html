@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login Page</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <style>
+    body {
+     background-image: url("https://img.freepik.com/free-photo/blurred-bikes_1203-102.jpg?size=626&ext=jpg"); /* Replace with your actual image URL */
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+   }
+   .logo {
+     max-width: 200px;
+   }
+   .contact-info {
+     font-weight: bold;
+     color:orange;
+   }
+   .contact-info span {
+     font-weight: bold;
+     color:orange;
+   }
+   .contact-info i {
+     margin-right: 5px;
+     color:orange;
+     font-weight: bold;
+   }
+   .form-group label {
+     font-weight: bold;
+   }
+   .btn-orange {
+     background-color: orange;
+     color: white;
+   }
+    .form-container {
+        background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+        border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+        padding: 20px; /* Space between the form and the border */
+        margin: 20px; /* Margin around the container */
+        width: auto; /* Adjust width to fit its content */
+        border-radius: 1rem; /* Rounded corners */
+        backdrop-filter: blur(10px); /* Blur effect */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    }
+
+    .message {
+        font-weight: bold;
+        color: orange;
+        font-size: 20px; /* Adjust the font size as needed */
+        background-color: lightgray; /* Choose your desired background color */
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: inline-block; /* Ensures the background fits the text size */
+    }
+
+
+ </style>
+</head>
+<body>
+ <div class="container my-5">
+   <div class="row">
+     <div class="col-md-6">
+      <div class="form-container">
+       <img src="https://www.logomyway.com/logos_new/15758/STAMINA2_986886071316.png" alt="Logo" class="logo mb-4">
+       <h1 class="contact-info">Registration information</h1><br></br>
+       <p class="contact-info"><span><img src="https://e7.pngegg.com/pngimages/22/547/png-clipart-white-and-orange-icon-oregon-service-home-icon-miscellaneous-angle.png" alt="Phone Icon"/ class="me-2" style="width: 15px; height: 15px;">198 west 21th street, suite 731 New</span></p>
+       <p class="contact-info"><span><img src="https://banner2.cleanpng.com/20180202/fpw/kisspng-icon-phone-png-pic-5a753b39eeedd9.7165186815176323139787.jpg" alt="Phone Icon" class="me-2" style="width: 15px; height: 15px;"> +1234 9567 890</span></p>
+       <p class="contact-info"><span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQomuWfJXr0pLGFfWe4QYdke4n7Gebb2xxt11El6NNVbA&s" alt="Phone Icon" class="me-2" style="width: 15px; height: 15px;"> info@yoursite.com</span></p>
+     </div></div>
+     <div class="col-md-6">
+       <h2 class="contact-info">Get In Touch</h2>
+       <form    th:action="@{/registration}"
+                method="post"
+                role="form"
+                th:object="${user}"
+       >
+           <div class="form-container">
+         <div class="form-group">
+           <label for="fullname">Full Name </label>
+           <input th:field="*{fullname}" type="text" class="form-control" id="fullname" placeholder="Enter your full name">
+         </div>
+            <div class="form-group">
+           <label for="password">Password</label>
+           <input th:field="*{password}" type="text" class="form-control" id="password" placeholder="Enter your Password">
+         </div>
+         <div class="form-group">
+           <label for="email">Email Address</label>
+           <input th:field="*{email}"  type="email" class="form-control" id="email" placeholder="Enter your email address">
+         </div>
+         <div class="form-group">
+           <label for="number"> Phone No</label>
+           <input th:field="*{number}"  type="tel" class="form-control" id="number" placeholder="Enter your phone number">
+         </div>
+         <div class="form-group">
+           <label for="about">Say something about us</label>
+           <textarea th:field="*{about}"  class="form-control" id="about" rows="3"></textarea>
+         </div>
+         <center>
+         <button type="submit" value="Register" class="btn btn-orange">Register</button></center>
+       </form>
+         <center>
+         <div class="message" th:if="${message != null}">
+             [[${message}]]
+         </div></center>
+     </div>
+   </div>
+     </div>
+ </div>
+ <script src="https://kit.fontawesome.com/yourkit.js"></script>
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

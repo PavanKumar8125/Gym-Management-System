@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamina Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Small width orange background */
+        .top-bar {
+            background-color: #FF7F50;
+            height: 50px;
+            padding: 0 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link:hover {
+            color: #FF5722;
+        }
+
+        /* Website name */
+        .website-name {
+            line-height: 50px;
+        }
+
+        /* Social icons */
+        .social-icons img {
+            margin-left: 10px;
+        }
+
+        /* Bigger width white background */
+        .main-nav {
+            background-color: white;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Body grey background */
+        body {
+            background-color: #f4f4f4;
+        }
+
+        /* Center content */
+        .center-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: black;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 60px;
+        }
+
+        p {
+            color: black;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 50px;
+        }
+
+        .account-section {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background-image: url('https://raw.githubusercontent.com/PavanKumar8125/gym-management-frontend/main/gym-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .btn-custom {
+            width: 100px;
+        }
+
+        .btn-orange {
+            background-color: #FF7F50;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background-color: #ff5722;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+        }
+
+        .class-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: white;
+            text-align: center;
+        }
+
+        .class-card h5 {
+            color: #FF7F50;
+        }
+
+        .right-text {
+            text-align: right;
+        }
+
+        .testimonials,
+        .membership-plans {
+            padding: 50px 0;
+            background-color: #333;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .membership-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-color: orange;
+            border-width: 3px;
+        }
+
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-item {
+            background: #444;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+        }
+
+        .testimonial-item small {
+            display: block;
+            margin-top: 10px;
+            color: #FF7F50;
+        }
+
+        .navbar .logout-btn {
+            color: #FF7F50;
+            font-weight: bold;
+        }
+
+        .navbar .logout-btn:hover {
+            color: #ff5722;
+        }
+
+        .right-text {
+            text-align: right;
+            margin-left: 900px;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            margin-left: 800px;
+            align-items: center;
+        }
+
+        .navbar-nav .btn-customm {
+            margin-left: auto;
+        }
+
+        .vlog-section {
+            padding: 50px 0;
+            background-color: #f4f4f4;
+        }
+
+        .vlog-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .vlog-post {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .vlog-post img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .vlog-post h4 {
+            color: #FF7F50;
+            margin-top: 15px;
+        }
+
+        .vlog-post p {
+            color: #666;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <!-- Website Name -->
+    <div class="website-name">
+        STAMINA
+    </div>
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/t.jpg?raw=true" alt="Twitter" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/i.jpg?raw=true" alt="Instagram" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/f.jpg?raw=true" alt="Facebook" width="30px" height="30px">
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">STAMINA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="http://localhost:8080/user-page">HOME</a>
+                <a class="nav-link" href="http://localhost:8080/slot">TRAINER</a>
+                <a class="nav-link active" href="#">BLOG</a>
+                <a class="nav-link" href="http://localhost:8080/contact">CONTACT</a>
+                <a class="nav-link" href="http://localhost:8080/about">ABOUT</a>
+                <a class="nav-link" href="http://localhost:8080/login">ADMIN</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Vlog Section -->
+<div class="container vlog-section mt-5">
+    <h2 class="text-center mb-4">Our Latest Vlogs</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="vlog-post">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/online-workout-training-video-thumbnail-design-template-98ee10ad8702d75894e3414ac230fcdd_screen.jpg?ts=1634825836" alt="Vlog Thumbnail">
+                <h4>Vlog - 1</h4>
+                <p>"Transform Your Body: 30-Day Fitness Challenge"</p>
+                <a href="https://www.youtube.com/watch?v=lumimB_aa7M&ab_channel=JustMerk" class="btn btn-orange btn-custom">Watch Now</a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="vlog-post">
+                <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fitness-workout-video-thumbnail-design-template-1d2f1fb5830cc9faf773e0155c27a565_screen.jpg?ts=1634957723" alt="Vlog Thumbnail">
+                <h4>Vlog - 2</h4>
+                <p>How to Stay Motivated to Workout</p>
+                <a href="https://www.youtube.com/watch?v=p0RR4LWlt5w&ab_channel=DanielSimmons" class="btn btn-orange btn-custom">Watch Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="testimonials container mt-5">
+    <h2 class="text-center mb-4">What Our Clients Say</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="testimonial-item">
+                <p><center>"Joining Stamina was the best decision I ever made. The trainers are fantastic and the environment is so motivating."</center></p>
+                <small>- Alex M.</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial-item">
+                <p><center>"I've achieved my fitness goals thanks to the excellent programs at Stamina. Highly recommend it!"</center></p>
+                <small>- Sarah K.</small>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="testimonial-item">
+                <p><center>"The community at Stamina is amazing. It's not just a gym, it's a family."</center></p>
+                <small>- John D.</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

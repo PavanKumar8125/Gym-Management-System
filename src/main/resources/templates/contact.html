@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Stamina Gym</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .top-bar {
+            background-color: #FF7F50;
+            height: 50px;
+            padding: 0 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link:hover {
+            color: #FF5722;
+        }
+
+        .website-name {
+            line-height: 50px;
+        }
+
+        .social-icons img {
+            margin-left: 10px;
+        }
+
+        .main-nav {
+            background-color: white;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            color: black;
+            font-weight: bold;
+        }
+
+        p {
+            color: black;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .contact-details {
+            background-color: white;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-details h3 {
+            color: #FF7F50;
+        }
+
+        .contact-details .address,
+        .contact-details .phone,
+        .contact-details .email,
+        .contact-details .hours {
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .navbar .logout-btn {
+            color: #FF7F50;
+            font-weight: bold;
+        }
+
+        .navbar .logout-btn:hover {
+            color: #ff5722;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            margin-left: 800px;
+            align-items: center;
+        }
+        .navbar-nav .btn-customm {
+            margin-left: auto;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <!-- Website Name -->
+    <div class="website-name">
+        STAMINA
+    </div>
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/t.jpg?raw=true" alt="Twitter" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/i.jpg?raw=true" alt="Instagram" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/f.jpg?raw=true" alt="Facebook" width="30px" height="30px">
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">STAMINA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="http://localhost:8080/user-page">HOME</a>
+                <a class="nav-link" href="http://localhost:8080/slot">TRAINER</a>
+                <a class="nav-link" href="http://localhost:8080/blog">BLOG</a>
+                <a class="nav-link active" href="http://localhost:8080/contact">CONTACT</a>
+                <a class="nav-link" href="http://localhost:8080/about">ABOUT</a>
+                <a class="nav-link" href="http://localhost:8080/login">ADMIN</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Section -->
+<div class="container mt-5">
+    <div class="contact-details">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further information, feel free to contact us.</p>
+
+        <div class="address">
+            <h3>Address:</h3>
+            <p>Stamina Gym<br>123 Fitness Street<br>Health City, HC 56789</p>
+        </div>
+
+        <div class="phone">
+            <h3>Phone:</h3>
+            <p>+1 (234) 567-8901</p>
+        </div>
+
+        <div class="email">
+            <h3>Email:</h3>
+            <p>info@staminagym.com</p>
+        </div>
+
+        <div class="hours">
+            <h3>Operating Hours:</h3>
+            <p>Monday - Friday: 6:00 AM - 10:00 PM<br>Saturday: 8:00 AM - 8:00 PM<br>Sunday: Closed</p>
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <div class="footer">
+
+        <p><center> &copy; 2024 Stamina. All rights reserved.</center></p>
+        <p><center>Follow us on:</center></p>
+        <div class="social-icons">
+            <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/t.jpg?raw=true" alt="Twitter" width="30px" height="30px">
+            <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/i.jpg?raw=true" alt="Instagram" width="30px" height="30px">
+            <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/f.jpg?raw=true" alt="Facebook" width="30px" height="30px">
+        </div>
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

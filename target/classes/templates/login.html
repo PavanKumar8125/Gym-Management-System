@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Login Page</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+ <style>
+    body {
+     background-image: url("https://img.freepik.com/free-photo/blurred-bikes_1203-102.jpg?size=626&ext=jpg"); /* Ensure this path is correct */
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+   }
+   .logo {
+     max-width: 200px;
+   }
+   .contact-info {
+     font-weight: bold;
+     color: orange;
+   }
+   .btn-orange {
+     background-color: orange;
+     color: white;
+   }
+   .btn-light {
+     border-color: orange;
+     color: orange;
+   }
+   .btn-light:hover {
+     background-color: orange;
+     color: white;
+   }
+   h1{
+     color:orange;
+     font-weight: bold;
+   }
+     .form-container {
+         background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white background */
+         border: 2px solid rgba(255, 255, 255, 0.5); /* Semi-transparent white border */
+         padding: 20px; /* Space between the form and the border */
+         margin: 20px; /* Margin around the container */
+         width: auto; /* Adjust width to fit its content */
+         border-radius: 1rem; /* Rounded corners */
+         backdrop-filter: blur(10px); /* Blur effect */
+         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+     }
+    .message {
+        font-weight: bold;
+        color: orange;
+        font-size: 20px; /* Adjust the font size as needed */
+        background-color: lightgray; /* Choose your desired background color */
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: inline-block; /* Ensures the background fits the text size */
+    }
+
+    form {
+            padding: 20px; /* Padding inside the form */
+            background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+
+    }
+
+ </style>
+</head>
+<body>
+  
+ <div class="container my-5">
+<img src="https://www.logomyway.com/logos_new/15758/STAMINA2_986886071316.png" alt="Logo" class="logo mb-4">
+   
+   <div class="row justify-content-center">
+   
+     <div class="col-md-6">
+ <div class="form-container">
+      <h1> <center>LOGIN DETAILS </center></h1>
+
+     <form
+             th:action="@{/login}"
+             method="post"
+
+     >
+         <div class="form-group">
+           <label for="username">Email</label>
+           <input type="email" class="form-control"  name="username" id="username" placeholder="Enter your username">
+         </div>
+         <div class="form-group">
+           <label for="password">Password</label>
+           <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
+         </div>
+<center>
+         <button type="submit"  value="Register" class="btn btn-orange mb-3">Login</button></center>
+         
+       </form>
+     <div class="message" th:if="${param.error}">
+         Invalid Username or Password
+     </div>
+     <div class="message" th:if="${param.logout}">
+         Logout Successfuly
+     </div>
+     </div>
+   </div>
+ </div>
+</div>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

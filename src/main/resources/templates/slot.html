@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stamina Slot Booking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Small width orange background */
+        .top-bar {
+            background-color: #FF7F50;
+            height: 50px;
+            padding: 0 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link:hover {
+            color: #FF5722;
+        }
+
+        /* Website name */
+        .website-name {
+            line-height: 50px;
+        }
+
+        /* Social icons */
+        .social-icons img {
+            margin-left: 10px;
+        }
+
+        /* Bigger width white background */
+        .main-nav {
+            background-color: white;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Body grey background */
+        body {
+            background-image: url("https://img.freepik.com/free-photo/blurred-bikes_1203-102.jpg?size=626&ext=jpg"); /* Replace with your actual image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Center content */
+        .center-content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h3 {
+            color: black;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 60px;
+        }
+
+        p {
+            color: black;
+            font-weight: bold;
+            text-align: left;
+            margin-left: 50px;
+        }
+
+        .account-section {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            background-image: url('https://raw.githubusercontent.com/PavanKumar8125/gym-management-frontend/main/gym-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .overlay {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .btn-custom {
+            width: 100px;
+        }
+
+        .btn-orange {
+            background-color: #FF7F50;
+            color: white;
+        }
+
+        .btn-orange:hover {
+            background-color: #ff5722;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+        }
+
+        .class-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px 0;
+            background-color: white;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .class-card h5 {
+            color: #FF7F50;
+        }
+
+        .class-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .right-text {
+            text-align: right;
+        }
+
+        .testimonials,
+        .membership-plans {
+            padding: 50px 0;
+            background-color: #333;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .membership-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-color: orange;
+            border-width: 3px;
+        }
+
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-item {
+            background: #444;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+        }
+
+        .testimonial-item small {
+            display: block;
+            margin-top: 10px;
+            color: #FF7F50;
+        }
+
+        .navbar .logout-btn {
+            color: #FF7F50;
+            font-weight: bold;
+        }
+
+        .navbar .logout-btn:hover {
+            color: #ff5722;
+        }
+
+        .right-text {
+            text-align: right;
+            margin-left: 900px;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            margin-left: 800px;
+            align-items: center;
+        }
+
+        .navbar-nav .btn-customm {
+            margin-left: auto;
+        }
+        .booking-form {
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .submit-btn {
+            background-color: #FF7F50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #ff5722;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <!-- Website Name -->
+    <div class="website-name">
+
+    </div>
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/t.jpg?raw=true" alt="Twitter"
+             width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/i.jpg?raw=true" alt="Instagram"
+             width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/f.jpg?raw=true" alt="Facebook"
+             width="30px" height="30px">
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">STAMINA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link " aria-current="page" href="http://localhost:8080/user-page">HOME</a>
+                <a class="nav-link active" href="#">TRAINER</a>
+                <a class="nav-link" href="http://localhost:8080/blog">BLOG</a>
+                <a class="nav-link" href="http://localhost:8080/contact">CONTACT</a>
+                <a class="nav-link" href="http://localhost:8080/about">ABOUT</a>
+                <a class="nav-link" href="http://localhost:8080/login">ADMIN</a>
+                <a class="btn btn-orange btn-customm" href="http://localhost:8080/registration">LOGOUT</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Slot Booking Section -->
+<div class="container mt-5">
+    <h3 class="text-center">Slot Booking</h3>
+    <div class="row">
+        <!-- Slot 1 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Yoga</h5>
+                <p>Time: 6:00 AM - 7:00 AM</p>
+                <p>Trainer: John Doe</p>
+
+            </div>
+        </div>
+        <!-- Slot 2 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>HIIT</h5>
+                <p>Time: 7:30 AM - 8:30 AM</p>
+                <p>Trainer: Jane Smith</p>
+
+            </div>
+        </div>
+        <!-- Slot 3 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Strength Training</h5>
+                <p>Time: 6:00 PM - 7:00 PM</p>
+                <p>Trainer: Bob Johnson</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <!-- Slot 4 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Pilates</h5>
+                <p>Time: 9:00 AM - 10:00 AM</p>
+                <p>Trainer: Lisa Adams</p>
+
+            </div>
+        </div>
+        <!-- Slot 5 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Cardio Blast</h5>
+                <p>Time: 5:00 PM - 6:00 PM</p>
+                <p>Trainer: Chris Evans</p>
+
+            </div>
+        </div>
+        <!-- Slot 6 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>CrossFit</h5>
+                <p>Time: 7:00 PM - 8:00 PM</p>
+                <p>Trainer: Emma Watson</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <!-- Slot 7 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Spin Class</h5>
+                <p>Time: 8:00 AM - 9:00 AM</p>
+                <p>Trainer: Mark Wilson</p>
+
+            </div>
+        </div>
+        <!-- Slot 8 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Zumba</h5>
+                <p>Time: 10:00 AM - 11:00 AM</p>
+                <p>Trainer: Angela Brown</p>
+
+            </div>
+        </div>
+        <!-- Slot 9 -->
+        <div class="col-md-4">
+            <div class="class-card">
+                <h5>Bootcamp</h5>
+                <p>Time: 5:30 PM - 6:30 PM</p>
+                <p>Trainer: Matt Davis</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <h3 class="text-center">Booking Form</h3>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 booking-form">
+            <form>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option selected disabled>Select Trainer</option>
+                        <option>John Doe</option>
+                        <option>Jane Smith</option>
+                        <option>Bob Johnson</option>
+                        <!-- Add more options for other trainers -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option selected disabled>Select Time Slot</option>
+                        <option>6:00 AM - 7:00 AM</option>
+                        <option>7:30 AM - 8:30 AM</option>
+                        <option>6:00 PM - 7:00 PM</option>
+                        <!-- Add more options for other time slots -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start_date">Start Date:</label>
+                    <input type="date" class="form-control" id="start_date">
+                </div>
+                <div class="form-group">
+                    <label for="end_date">End Date:</label>
+                    <input type="date" class="form-control" id="end_date">
+                </div>
+                <button type="submit" class="btn btn-block submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

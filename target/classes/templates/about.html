@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Stamina Gym</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .top-bar {
+            background-color: #FF7F50;
+            height: 50px;
+            padding: 0 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-link:hover {
+            color: #FF5722;
+        }
+
+        .website-name {
+            line-height: 50px;
+        }
+
+        .social-icons img {
+            margin-left: 10px;
+        }
+
+        .main-nav {
+            background-color: white;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .about-section {
+            background-color: white;
+            padding: 30px;
+            margin-top: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            color: #FF7F50;
+            font-weight: bold;
+        }
+
+        .about-section p {
+            color: black;
+            text-align: left;
+        }
+
+        .team-section {
+            margin-top: 50px;
+        }
+
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-member h5 {
+            color: #FF7F50;
+        }
+
+        .team-member p {
+            color: black;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .navbar .logout-btn {
+            color: #FF7F50;
+            font-weight: bold;
+        }
+
+        .navbar .logout-btn:hover {
+            color: #ff5722;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            margin-left: 800px;
+            align-items: center;
+        }
+        .navbar-nav .btn-customm {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <!-- Website Name -->
+    <div class="website-name">
+        STAMINA
+    </div>
+    <!-- Social Icons -->
+    <div class="social-icons">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/t.jpg?raw=true" alt="Twitter" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/i.jpg?raw=true" alt="Instagram" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/f.jpg?raw=true" alt="Facebook" width="30px" height="30px">
+    </div>
+</div>
+
+<!-- Main Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">STAMINA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link" aria-current="page" href="http://localhost:8080/user-page">HOME</a>
+                <a class="nav-link" href="http://localhost:8080/slot">TRAINER</a>
+                <a class="nav-link" href="http://localhost:8080/blog">BLOG</a>
+                <a class="nav-link" href="http://localhost:8080/contact">CONTACT</a>
+                <a class="nav-link active" href="#">ABOUT</a>
+                <a class="nav-link" href="http://localhost:8080/login">ADMIN</a>
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- About Section -->
+<div class="container mt-5">
+    <div class="about-section">
+        <h2>About Us</h2>
+        <p>Welcome to Stamina Gym, your ultimate destination for fitness and wellness. Our mission is to help you achieve your fitness goals and lead a healthier lifestyle. At Stamina Gym, we offer state-of-the-art facilities, a variety of fitness classes, and expert trainers to guide you every step of the way.</p>
+        <p>We believe in creating a supportive and motivating environment for all our members. Whether you are a beginner or a seasoned athlete, our team is dedicated to helping you succeed. Join us and become a part of the Stamina community today!</p>
+    </div>
+
+    <!-- Team Section -->
+    <div class="team-section mt-5">
+        <h2 class="text-center">Meet Our Team</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="https://media.istockphoto.com/id/675179390/photo/muscular-trainer-writing-on-clipboard.jpg?s=612x612&w=0&k=20&c=9NKx1AwVMpPY0YBlk5H-hxx2vJSCu1Wc78BKRM9wFq0=" alt="Team Member 1">
+                    <h5>John Doe</h5>
+                    <p>Head Trainer</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="https://www.shutterstock.com/image-photo/portrait-muscular-trainer-writing-on-260nw-296585468.jpg" alt="Team Member 2">
+                    <h5>Jane Smith</h5>
+                    <p>Nutritionist</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="team-member">
+                    <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/1%20(1).jpg?raw=true" alt="Team Member 3">
+                    <h5>Mike Johnson</h5>
+                    <p>Personal Trainer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2024 Stamina. All rights reserved.</p>
+    <p>Follow us on:</p>
+    <div class="social-icons">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/t.jpg?raw=true" alt="Twitter" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/i.jpg?raw=true" alt="Instagram" width="30px" height="30px">
+        <img src="https://github.com/PavanKumar8125/gym-management-frontend/blob/main/f.jpg?raw=true" alt="Facebook" width="30px" height="30px">
+    </div>
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
